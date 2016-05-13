@@ -1,3 +1,105 @@
-/* This is a multi-line
-comment. Add your CSS code
-from Unit 1 - 5 below  */
+body {
+	background: white; /*unsupported browsers*/
+	background: rgba(245,243,243,.1);
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	text-transform: lowercase;
+}
+
+h1 {
+	color: rgba(2,132,130,.8);
+	display: inline-block;
+	padding: 10px 10px;
+	letter-spacing: 10px;
+}
+
+h2 {
+	color: #808080;
+}
+
+nav {
+	background: grey; /*Unsupported browsers*/
+	background: -webkit-linear-gradient(left, rgba(128,128,128,0), rgba(128,128,128,1)); /*Safari*/
+	background: -o-linear-gradient(right, rgba(128,128,128,0), rgba(128,128,128,1)); /*Opera*/
+	background: -moz-linear-gradient(right, rgba(128,128,128,0), rgba(128,128,128,1)); /*Firefox*/
+	background: linear-gradient(to right, rgba(128,128,128,0), rgba(128,128,128,1)); /*Standard*/
+}
+
+a {
+	background-color: transparent;
+	color: #000;
+	padding: 35px;
+	display: block;
+	float: left;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	background-color: rgba(2,132,130,.5);
+	cursor: pointer;
+	transition: background 1s;
+}
+
+img {
+	height: 200px;
+	width: 150px;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.container {
+	margin: 3% 10% 0 10%;
+}
+
+.board {
+	height: 50%;
+	width: 50%;
+	display: inline-block;
+	float: center;
+	margin: 1% 8%;
+}
+
+.card {
+	height: 200px;
+	width: 150px;
+	/*float: left;*/
+	display: inline-block;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 40px 12px;
+	background: green; /*Unsupported browsers*/
+  	background: -webkit-linear-gradient(left,rgba(2,132,130,0),rgba(2,132,130,.8)); /*Safari*/
+  	background: -o-linear-gradient(right,rgba(2,132,130,0),rgba(2,132,130,.8)); /*Opera*/
+  	background: -moz-linear-gradient(right,rgba(2,132,130,0),rgba(2,132,130,.8)); /*Firefox*/
+  	background: linear-gradient(to right, rgba(2,132,130,0), rgba(2,132,130,.8)); /*Standard*/
+}
+
+.card:hover {
+	background: green; /*Unsupported browsers*/
+  	background: -webkit-linear-gradient(left,rgba(2,132,130,0),rgba(2,132,130,.4)); /*Safari*/
+  	background: -o-linear-gradient(right,rgba(2,132,130,0),rgba(2,132,130,.4)); /*Opera*/
+  	background: -moz-linear-gradient(right,rgba(2,132,130,0),rgba(2,132,130,.4)); /*Firefox*/
+  	background: linear-gradient(to right, rgba(2,132,130,0), rgba(2,132,130,.4)); /*Standard*/
+  	cursor: pointer;
+  	transition: background 1s;
+}
+
+.name {
+	color: #ffffff;
+}
+
+footer {
+	background-color: #808080;
+	clear: both;
+}

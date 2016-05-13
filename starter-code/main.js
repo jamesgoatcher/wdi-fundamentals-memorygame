@@ -1,29 +1,50 @@
-console.log("JS file is connected to HTML! Woo!")
+console.log("JS file is connected to HTML");
 
-//assigns and defines the cards
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "king";
-var cardFour = "king";
+//World variables defined
+var cards = ["queen", "queen", "king", "king"];
 
-//conditions for matches
-/*if (cardOne === cardTwo) {
-	alert("You found a match!");
-} else if (cardThree === cardFour) {
-	alert("You found a match!")
-} else {
-	alert("Sorry, try again.")
-};*/
+var cardsInPlay = [];
 
-//for loop to create the cards
 var gameBoard = document.getElementById('game-board');
 
-var createBoard = function () {
-for(var i = 0; i < 4; i++) {
-	var newCard = document.createElement('div');
-	newCard.className = 'card';
-	document.getElementsByClassName('board')[0].appendChild(newCard);
+
+//Function to check for a match
+var isMatch = function() {
+    if (cardsInPlay[0] == cardsInPlay[1]) {
+	alert('You found a match!');	
+    } else {
+	alert('Sorry, try again.');
+    }
+    //location.reload();
+    setTimeout(window.location.reload.bind(window.location), 1200);
+};
+
+
+//Function to push active cards into empty array
+var isTwoCards = function(event) {
+	flipCard(event.target);
+	cardsInPlay.push(this.getAttribute('data-card'));
+	if (cardsInPlay.length === 2) {
+		isMatch(cardsInPlay);
+		cardsInPlay = [];
 	}
 };
 
-createBoard();
+//Function to flip cards
+function flipCard(card) {
+	if (card.getAttribute('data-card') === 'king') {
+    card.innerHTML = '<img src = "king-mew.png" alt = "King of Pokemon"/>';
+	} else {
+	card.innerHTML = '<img src = "queen-psy.jpg" alt = "Queen of Pokemon"/>';
+	}
+}
+
+//Set up the gameboard through DOM manipulation
+for(var i = 0; i < cards.length; i++) {
+	var newCard = document.createElement('div');
+	newCard.className = 'card';
+	newCard.setAttribute('data-card', cards[i]);
+	gameBoard.appendChild(newCard);
+
+	newCard.addEventListener('click', isTwoCards);
+}
